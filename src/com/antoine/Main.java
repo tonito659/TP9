@@ -23,14 +23,15 @@ public class Main {
         int direction = -1;
 
         for (double i = 0; i<t; i+=0.1){
+
             pox = vx*0.1 + pox -frt*vx;
             poy = (-0.5*9.81*0.1 - vy*0.1 + poy)*direction -frt*vy;
             vy = vy + 0.1*9.81*-direction;
-            if (poy <0) {
+            if (poy <=0) {
                 direction = 1;
-            }else{
-                direction = -1;
-            }
+            }else direction = -1;
+            System.out.println("x: "+ pox + "\ty : "+ poy+"\t \t \t dir : " + direction + "\t vy : " + vy);
+
         }
         System.out.println(" les coordonnées sont en x: "+ pox + " et en y : "+ poy);
 
